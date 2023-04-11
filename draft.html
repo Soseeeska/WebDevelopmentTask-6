@@ -1,0 +1,158 @@
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="style.css" /> 
+  <title>Rage</title>
+  <script scr = "script.js"></script>
+</head>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Components Rage</title>
+  </head>
+  <body>
+    <div class="header">
+      <h1>COMPUTER COMPONENTS RAGE</h1>
+    </div>
+
+    <div class="main_picture">
+    <img src = main_picture.jpg >
+    </div>
+
+    <div class="intro">
+      <p>Welcome to our computer components web site! We offer a wide range of components, including CPUs, GPUs, motherboards, and more. Browse our selection to find the perfect components for your build.</p>
+    </div>
+    <div class="product-list">
+      <div class="box">
+        <img src="product1.jpg" width="400px" alt="Product 1">
+        <h2 style="color: #FF4F00;">NEW GENERATION OF PROCESSORS</h2>
+        <p>From small businesses to enterprises, the next generation of 
+           processors with PRO technologies help accelerate productivity, enhance collaboration, and let creativity
+            flow for professional laptop users. If your business requires exceptional performance and responsiveness,
+             security features and professional features, new processors are for you.</p>
+      </div>
+      <div class="box">
+        <img src="product2.jpg" width="400px" alt="Product 2">
+        <h2 style="color: #FF4F00;">GRAPHICS TUNED TO MAXIMUM POWER</h2>
+        <p>Breakthrough new levels of performance with up to 24GB of GDDR6 memory
+           and blazing fast clock speeds to deliver an incredible experience at 4K
+            and beyond. NEw graphics feature advanced 
+            3 compute units, with 2nd generation raytracing accelerators and new 
+            AI accelerators to deliver incredible performance while maximizing graphical
+            fidelity.</p>
+      </div>
+      <div class="box">
+        <img src="product3.jpg" width="400px" alt="Product 3"> 
+        <h2 style="color:#FF4F00;">FASTER THAN LIGHT</h2>
+        <p>New generation RAM makes it quick and easy to select compatible
+           RAM memory for your Desktop PC, Laptop, or Server. 
+           Search by OEM brand system, OEM memory part number, 
+           or memory specifications. All memory is backed
+            by 100% testing, a lifetime warranty and over 30 years
+             of design and manufacturing expertise.</p>
+      </div>
+    </div>
+    <div class="testimonials">
+      <h2>Coose your components</h2>
+
+<!--/// CREATING AN ORDER FORM ///-->
+
+<html>
+  <body>
+<form id="orderForm">
+  <h3>Order Form</h3>
+  <hr>
+  <label for="name">Name:</label>
+  <input type="text" id="name" required>
+  <br><br>
+  <label for="email">Email:</label>
+  <input type="email" id="email" required>
+  <br><br>
+  <label for="category">Category:</label>
+  <select id="category">
+    <option value="">Select a Category</option>
+    <option value="cpu">CPU</option>
+    <option value="gpu">GPU</option>
+    <option value="ram">RAM</option>
+  </select>
+  <br><br>
+  <label for="product">Product:</label>
+  <select id="product" disabled>
+    <option value="">Select a Category First</option>
+  </select>
+  <br><br>
+  <label for="quantity">Quantity:</label>
+  <input type="number" id="quantity" required>
+  <br><br>
+  <button type="submit">Submit</button>
+</form>
+<div id="confirmation"></div>
+<script>
+const form = document.querySelector("#orderForm");
+const nameInput = document.querySelector("#name");
+const emailInput = document.querySelector("#email");
+const categorySelect = document.querySelector("#category");
+const productSelect = document.querySelector("#product");
+const quantityInput = document.querySelector("#quantity");
+const confirmationDiv = document.querySelector("#confirmation");
+
+categorySelect.addEventListener("change", function() {
+  const selectedCategory = this.value;
+  productSelect.innerHTML = "";
+  productSelect.disabled = false;
+  switch (selectedCategory) {
+    case "cpu":
+      productSelect.innerHTML = `
+        <option value="i5">Intel Core i5</option>
+        <option value="i7">Intel Core i7</option>
+        <option value="ryzen3">AMD Ryzen 3</option>
+        <option value="ryzen5">AMD Ryzen 5</option>
+      `;
+      break;
+    case "gpu":
+      productSelect.innerHTML = `
+        <option value="gtx1650">Nvidia GTX 1650</option>
+        <option value="gtx1660">Nvidia GTX 1660</option>
+        <option value="gtx1660ti">Nvidia GTX 1660 Ti</option>
+        <option value="rx580">AMD Radeon RX 580</option>
+      `;
+      break;
+    case "ram":
+      productSelect.innerHTML = `
+        <option value="8gb">8 GB</option>
+        <option value="16gb">16 GB</option>
+        <option value="32gb">32 GB</option>
+        <option value="64gb">64 GB</option>
+      `;
+      break;
+    case "storage":
+      productSelect.innerHTML = `
+        <option value="ssd128">128 GB SSD</option>
+        <option value="ssd256">256 GB SSD</option>
+        <option value="ssd512">512 GB SSD</option>
+        <option value="hdd1tb">1 TB HDD</option>
+      `;
+      break;
+
+    default:
+      productSelect.innerHTML = "";
+      productSelect.disabled = true;
+      break;
+  }
+});
+
+form.addEventListener("submit", function(event) {
+  event.preventDefault();
+  const name = nameInput.value;
+  const email = emailInput.value;
+  const category = categorySelect.value;
+  const product = productSelect.value})
+
+</script>
+  </body>
+</html>
